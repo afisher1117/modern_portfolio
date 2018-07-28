@@ -17,15 +17,24 @@ $background-opacity: 0.9;
 
       &:after {
         background: rgba($primary-color, $background-opacity);
-        content: '';
+        content: "";
         height: 100%;
         position: absolute;
         right: 0;
-        top: 0;        
+        top: 0;
         width: 100%;
         z-index: -1;
       }
     }
+  }
+}
+
+// Set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
   }
 }
 
